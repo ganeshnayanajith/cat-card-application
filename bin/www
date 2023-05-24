@@ -7,7 +7,7 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const app = require('../app');
-const debug = require('debug')('harver-exercise-se:server');
+const debug = require('debug')('cat-card-application:server');
 const http = require('http');
 
 /**
