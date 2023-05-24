@@ -14,10 +14,13 @@ const mergeSchema = Joi.object().keys({
 
 class CatValidator {
     static mergeValidation (obj) {
+
         const { value, error } = mergeSchema.validate(obj);
+
         if (error) {
             return Promise.reject(new CustomHttpError(HTTP_CODES.BAD_REQUEST, ERRORS.VALIDATION_ERROR, error.message));
         }
+
         return Promise.resolve(value);
     }
 }

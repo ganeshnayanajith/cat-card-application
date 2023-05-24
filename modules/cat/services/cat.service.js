@@ -35,9 +35,11 @@ class CatService {
             ]);
 
             const firstBody = firstRes.body;
-            const secondBody = secondRes.body;
 
             logger.log(CONSTANT.LOGGER.INFO, `Received first response with status : ${firstRes.statusCode}`);
+
+            const secondBody = secondRes.body;
+
             logger.log(CONSTANT.LOGGER.INFO, `Received second response with status : ${secondRes.statusCode}`);
 
             const img = await mergeImg([
@@ -53,7 +55,7 @@ class CatService {
 
             await writeFileAsync(fileOut, buffer, 'binary');
 
-            logger.log(CONSTANT.LOGGER.INFO, `The file was saved!`);
+            logger.log(CONSTANT.LOGGER.INFO, `The file was saved with file name : ${fileName}`);
 
             return Promise.resolve({ fileName });
 

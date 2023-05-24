@@ -26,6 +26,7 @@ Note - If you are running in DEV mode, you need to install nodemon globally
 
 ```
     npm install nodemon -g
+    npm run start:dev
 ```
 
 ### Example API request
